@@ -1248,13 +1248,33 @@ body {
 .observation-detail-modal,
 .observation-criterion-modal {
   display: grid;
-  gap: 16px;
+  gap: 14px;
+}
+
+.observation-criterion-modal {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 12px;
+}
+
+.observation-criterion-modal > .observation-detail-modal__summary,
+.observation-criterion-modal > .observation-tone-summary {
+  grid-column: 1 / -1;
+}
+
+.observation-criterion-modal > .observation-quote,
+.observation-criterion-modal > .observation-related {
+  grid-column: 1 / -1;
 }
 
 .observation-detail-modal__summary {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.observation-criterion-modal .observation-detail-modal__summary {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .observation-detail-card__value {
@@ -1267,7 +1287,13 @@ body {
 
 .observation-detail-modal__sections {
   display: grid;
-  gap: 16px;
+  gap: 14px;
+}
+
+.observation-detail-modal .student-success-card,
+.observation-detail-modal .student-success-panel {
+  padding: 14px 16px;
+  border-radius: 16px;
 }
 
 .observation-criteria-counts__row {
@@ -1281,12 +1307,25 @@ body {
   border: 1px solid rgba(66, 77, 102, 0.06);
 }
 
-.observation-evidence-list {
+.observation-detail-modal .observation-criteria-counts {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.observation-evidence-panel {
   display: grid;
   gap: 12px;
-  max-height: 420px;
-  overflow: auto;
-  padding-right: 6px;
+}
+
+.observation-evidence-panel .student-success-course-pagination {
+  margin-top: 2px;
+}
+
+.observation-evidence-list {
+  display: grid;
+  gap: 10px;
+  max-height: none;
+  overflow: visible;
+  padding-right: 0;
 }
 
 .observation-evidence-list::-webkit-scrollbar {
@@ -1306,8 +1345,8 @@ body {
 
 .observation-evidence-item {
   display: grid;
-  gap: 12px;
-  padding: 14px 16px;
+  gap: 10px;
+  padding: 12px 14px;
   border-radius: 16px;
   background: rgba(247, 249, 252, 0.94);
   border: 1px solid rgba(66, 77, 102, 0.08);
@@ -1323,6 +1362,7 @@ body {
 .observation-quote {
   display: grid;
   gap: 10px;
+  padding: 14px 16px;
 }
 
 .observation-quote__label {
@@ -1345,12 +1385,25 @@ body {
 .observation-related {
   display: grid;
   gap: 12px;
+  padding: 14px 16px;
+}
+
+.observation-related-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .observation-related-list__item {
   display: grid;
   gap: 4px;
   padding: 12px 14px;
+}
+
+.insight-modal__card--observation-detail {
+  width: min(980px, 95vw);
+}
+
+.insight-modal__card--observation-criterion {
+  width: min(980px, 95vw);
 }
 
 .survey-evaluation-course-modal {
@@ -2199,6 +2252,7 @@ body.modal-open {
   .survey-evaluation-course-modal__summary,
   .survey-evaluation-course-modal__sections,
   .observation-coverage,
+  .observation-criterion-modal,
   .observation-detail-modal__summary,
   .observation-detail-modal__sections,
   .student-success-rankings,
@@ -2214,6 +2268,18 @@ body.modal-open {
   }
 
   .observation-criteria-row {
+    grid-template-columns: 1fr;
+  }
+
+  .observation-criterion-modal .observation-detail-modal__summary {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .observation-related-list {
+    grid-template-columns: 1fr;
+  }
+
+  .observation-detail-modal .observation-criteria-counts {
     grid-template-columns: 1fr;
   }
 

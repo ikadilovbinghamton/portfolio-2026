@@ -1711,6 +1711,81 @@ function createObservationEvidenceList(evidenceRows) {
   return list;
 }
 
+function createObservationEvidencePanelContent(evidenceRows) {
+  const pageSize = 2;
+  const totalPages = Math.max(1, Math.ceil(evidenceRows.length / pageSize));
+  let pageIndex = 0;
+
+  const wrapper = document.createElement("div");
+  wrapper.className = "observation-evidence-panel";
+
+  const list = document.createElement("div");
+  wrapper.appendChild(list);
+
+  const pagination = document.createElement("div");
+  pagination.className = "student-success-course-pagination";
+
+  const previousButton = document.createElement("button");
+  previousButton.type = "button";
+  previousButton.className = "student-success-course-pagination__button";
+  previousButton.textContent = "Previous";
+  previousButton.addEventListener("click", () => {
+    if (pageIndex === 0) return;
+    pageIndex -= 1;
+    renderPage();
+  });
+
+  const status = document.createElement("p");
+  status.className = "student-success-course-pagination__status";
+
+  const nextButton = document.createElement("button");
+  nextButton.type = "button";
+  nextButton.className = "student-success-course-pagination__button";
+  nextButton.textContent = "Next";
+  nextButton.addEventListener("click", () => {
+    if (pageIndex >= totalPages - 1) return;
+    pageIndex += 1;
+    renderPage();
+  });
+
+  const summary = document.createElement("p");
+  summary.className = "student-success-course-pagination__summary";
+
+  pagination.appendChild(previousButton);
+  pagination.appendChild(status);
+  pagination.appendChild(nextButton);
+  pagination.appendChild(summary);
+  wrapper.appendChild(pagination);
+
+  function renderPage() {
+    const start = pageIndex * pageSize;
+    const pageEvidence = evidenceRows.slice(start, start + pageSize);
+    list.innerHTML = "";
+    list.appendChild(createObservationEvidenceList(pageEvidence));
+
+    status.textContent = `Page ${pageIndex + 1} of ${totalPages}`;
+    summary.textContent = `Showing ${start + 1}-${start + pageEvidence.length} of ${evidenceRows.length} comments`;
+    previousButton.disabled = pageIndex === 0;
+    nextButton.disabled = pageIndex >= totalPages - 1;
+  }
+
+  renderPage();
+
+  if (evidenceRows.length <= pageSize) {
+    pagination.hidden = true;
+  }
+
+  return wrapper;
+}
+
+function openObservationDetailModal(observation) {
+  showInsightModal(
+    observation.course,
+    createObservationDetailContent(observation),
+    { cardClass: "insight-modal__card--observation-detail" },
+  );
+}
+
 function createObservationDetailContent(observation) {
   const wrapper = document.createElement("div");
   wrapper.className = "observation-detail-modal";
@@ -1734,9 +1809,6 @@ function createObservationDetailContent(observation) {
   summary.appendChild(
     createObservationDetailCard("Observer", observation.observer, observation.sourceFile),
   );
-  summary.appendChild(
-    createObservationDetailCard("Modality", observation.modality, observation.sourceWorkbook),
-  );
   wrapper.appendChild(summary);
 
   const sections = document.createElement("div");
@@ -1754,7 +1826,7 @@ function createObservationDetailContent(observation) {
     "Merged classroom-observation comments for this observation entry.",
   );
   evidencePanel.classList.add("observation-detail-modal__evidence-panel");
-  evidencePanel.appendChild(createObservationEvidenceList(observation.evidence));
+  evidencePanel.appendChild(createObservationEvidencePanelContent(observation.evidence));
   sections.appendChild(evidencePanel);
 
   wrapper.appendChild(sections);
@@ -1774,7 +1846,7 @@ function createObservationCriterionRelatedList(criterion, observations) {
       item.type = "button";
       item.className = "observation-related-list__item";
       item.addEventListener("click", () => {
-        showInsightModal(observation.course, createObservationDetailContent(observation));
+        openObservationDetailModal(observation);
       });
       item.innerHTML = `
         <span class="observation-related-list__title">${observation.course}</span>
@@ -1915,15 +1987,16 @@ function createObservationCriteriaPanel(criteria, observations) {
     list.innerHTML = "";
 
     pageCriteria.forEach((criterion) => {
-      const row = document.createElement("button");
-      row.type = "button";
-      row.className = "observation-criteria-row";
-      row.addEventListener("click", () => {
-        showInsightModal(
-          criterion.criterion,
-          createObservationCriterionDetailContent(criterion, observations),
-        );
-      });
+    const row = document.createElement("button");
+    row.type = "button";
+    row.className = "observation-criteria-row";
+    row.addEventListener("click", () => {
+      showInsightModal(
+        criterion.criterion,
+        createObservationCriterionDetailContent(criterion, observations),
+        { cardClass: "insight-modal__card--observation-criterion" },
+      );
+    });
 
       const details = document.createElement("div");
       details.className = "observation-criteria-row__details";
@@ -2032,7 +2105,7 @@ function createObservationArchivePanel(observations) {
       card.type = "button";
       card.className = "observation-card";
       card.addEventListener("click", () => {
-        showInsightModal(observation.course, createObservationDetailContent(observation));
+        openObservationDetailModal(observation);
       });
 
       const title = document.createElement("p");
@@ -2174,10 +2247,17 @@ function ensureInsightModal() {
   return modal;
 }
 
-function showInsightModal(title, content) {
+function showInsightModal(title, content, options = {}) {
   const modal = ensureInsightModal();
+  const card = modal.querySelector(".insight-modal__card");
   const contentRoot = modal.querySelector(".insight-modal__content");
-  if (!contentRoot) return;
+  if (!contentRoot || !card) return;
+
+  card.className = "modal-card insight-modal__card";
+
+  if (options.cardClass) {
+    card.classList.add(options.cardClass);
+  }
 
   contentRoot.innerHTML = "";
 
