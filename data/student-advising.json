@@ -1,0 +1,173 @@
+{
+  "tables": [
+    {
+      "id": "advising-load",
+      "title": "Faculty Advising Load",
+      "description": "Advised a diverse cohort of students each semester, providing academic guidance, course planning, and career support. Worked closely with students to monitor progress, address challenges, and support retention and completion. Advising emphasizes goal setting, accountability, and connecting academic pathways to career and transfer opportunities.",
+      "columns": [
+        "Year",
+        "Semester",
+        "Number of Students"
+      ],
+      "rows": [
+        [
+          "2026",
+          "Spring",
+          "12"
+        ],
+        [
+          "2025",
+          "Fall",
+          "12"
+        ],
+        [
+          "2025",
+          "Spring",
+          "14"
+        ],
+        [
+          "2024",
+          "Fall",
+          "22"
+        ],
+        [
+          "2024",
+          "Spring",
+          "25"
+        ],
+        [
+          "2023",
+          "Fall",
+          "31"
+        ],
+        [
+          "2023",
+          "Spring",
+          "20"
+        ],
+        [
+          "2022",
+          "Fall",
+          "39"
+        ],
+        [
+          "2022",
+          "Spring",
+          "19"
+        ],
+        [
+          "2021",
+          "Fall",
+          "19"
+        ]
+      ]
+    },
+    {
+      "id": "capstone-projects",
+      "title": "Capstone Projects",
+      "description": "Supervised senior capstone projects in software development, where students design, develop, and present full-stack applications and technical solutions. Guided students through the complete development lifecycle, including project scoping, system design, implementation, testing, and final presentation. Projects span a range of technologies (e.g., Python, Java, JavaScript frameworks, mobile development, and AI/ML), emphasizing real-world problem solving, technical depth, and professional communication.",
+      "columns": [
+        "Year",
+        "Student Name",
+        "Portfolio Title"
+      ],
+      "rows": [
+        [
+          "2026",
+          "Jaedon E.",
+          "College Food Pickup App (Node.js, MySQL)"
+        ],
+        [
+          "2026",
+          "Ronan N.",
+          "RPG Game (Pygame)"
+        ],
+        [
+          "2026",
+          "Damien N.",
+          "Puzzle Games (Pygame)"
+        ],
+        [
+          "2026",
+          "Carlos P.",
+          "Assignment Tracker App (iOS, Swift)"
+        ],
+        [
+          "2026",
+          "Maggie V.",
+          "Farm Crop Management (Node.js, Express, React)"
+        ],
+        [
+          "2025",
+          "Gabby B.",
+          "Mood/Productivity Tracker App (Node.js, React)"
+        ],
+        [
+          "2025",
+          "Matthew G.",
+          "Cybersecurity Log Tracker/Analysis Tool with AI (Python, OpenAI API)"
+        ],
+        [
+          "2025",
+          "Sincere W.",
+          "Arcade Games Simulator (Pygame)"
+        ],
+        [
+          "2024",
+          "Hunter D.",
+          "Fantasy Basketball Predictive AI Models (Python, TensorFlow)"
+        ],
+        [
+          "2024",
+          "Musa D.",
+          "Planner App, Chat App (Node.js, MySQL)"
+        ],
+        [
+          "2024",
+          "Katherine G.",
+          "Blog, Ecommerce Store (PHP, MySQL, Laravel)"
+        ],
+        [
+          "2024",
+          "Jamie G.",
+          "Clock In Clock Out App for Medical Students (PHP, MySQL, JavaScript)"
+        ],
+        [
+          "2024",
+          "Edwin M.",
+          "Student Advising App (Java)"
+        ],
+        [
+          "2023",
+          "Joshua A.",
+          "Web Scraper, Recipe App (Python, Django, Node.js, MySQL)"
+        ],
+        [
+          "2023",
+          "Michael C.",
+          "Productivity App (Java)"
+        ],
+        [
+          "2023",
+          "Joshua D.",
+          "Budgeting App (PHP, MySQL, JavaScript)"
+        ],
+        [
+          "2023",
+          "Lizeth H.",
+          "Travel Planner App, Weather App (React)"
+        ],
+        [
+          "2023",
+          "Christian R.",
+          "Platformer Game (Unity)"
+        ],
+        [
+          "2023",
+          "Daniel W.",
+          "Platformer Game (Unity)"
+        ]
+      ]
+    }
+  ]
+}

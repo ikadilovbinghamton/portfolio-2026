@@ -1,0 +1,449 @@
+{
+  "tables": [
+    {
+      "id": "course-sections",
+      "title": "Courses taught over the years",
+      "columns": [
+        "Year",
+        "Semester",
+        "Course Name",
+        "Modality"
+      ],
+      "rows": [
+        [
+          "2026",
+          "Spring",
+          "Web Development with Scripting",
+          "Online"
+        ],
+        [
+          "2026",
+          "Spring",
+          "Logic and Problem Solving with C++",
+          "In-person"
+        ],
+        [
+          "2026",
+          "Spring",
+          "Networking Essentials",
+          "Online"
+        ],
+        [
+          "2026",
+          "Spring",
+          "Data Structures",
+          "Online"
+        ],
+        [
+          "2026",
+          "Spring",
+          "Cybersecurity Essentials",
+          "Online"
+        ],
+        [
+          "2026",
+          "Spring",
+          "Linux Essentials",
+          "Online"
+        ],
+        [
+          "2026",
+          "Spring",
+          "Capstone Projects in Software Development",
+          "Hybrid"
+        ],
+        [
+          "2025",
+          "Fall",
+          "IT Fundamentals",
+          "Online"
+        ],
+        [
+          "2025",
+          "Fall",
+          "Scripting (Python)",
+          "In-person"
+        ],
+        [
+          "2025",
+          "Fall",
+          "Web Design with HTML and CSS",
+          "In-person"
+        ],
+        [
+          "2025",
+          "Fall",
+          "Object Oriented Programming(Java)",
+          "Online"
+        ],
+        [
+          "2025",
+          "Fall",
+          "Systems Analysis",
+          "Online"
+        ],
+        [
+          "2025",
+          "Fall",
+          "Database Management",
+          "Online"
+        ],
+        [
+          "2025",
+          "Spring",
+          "Logic and Problem Solving with C++",
+          "In-person"
+        ],
+        [
+          "2025",
+          "Spring",
+          "IT Fundamentals",
+          "Online"
+        ],
+        [
+          "2025",
+          "Spring",
+          "Cybersecurity Essentials",
+          "Online"
+        ],
+        [
+          "2025",
+          "Spring",
+          "Linux Essentials",
+          "Online"
+        ],
+        [
+          "2025",
+          "Spring",
+          "Data Structures",
+          "Hybrid"
+        ],
+        [
+          "2025",
+          "Spring",
+          "Capstone Projects in Software Development",
+          "Hybrid"
+        ],
+        [
+          "2024",
+          "Fall",
+          "Computer Hardware and Software",
+          "Online"
+        ],
+        [
+          "2024",
+          "Fall",
+          "Scripting (Python)",
+          "In-person"
+        ],
+        [
+          "2024",
+          "Fall",
+          "Web Design with HTML and CSS",
+          "In-person"
+        ],
+        [
+          "2024",
+          "Fall",
+          "Object Oriented Programming(Java)",
+          "Online"
+        ],
+        [
+          "2024",
+          "Fall",
+          "Database Management",
+          "Hybrid"
+        ],
+        [
+          "2024",
+          "Fall",
+          "Networking Essentials",
+          "Online"
+        ],
+        [
+          "2024",
+          "Spring",
+          "Capstone Projects in Software Development",
+          "Hybrid"
+        ],
+        [
+          "2024",
+          "Spring",
+          "Logic and Problem Solving with C++",
+          "In-person"
+        ],
+        [
+          "2024",
+          "Spring",
+          "Data Structures",
+          "Hybrid"
+        ],
+        [
+          "2024",
+          "Spring",
+          "Systems Analysis",
+          "Hybrid"
+        ],
+        [
+          "2024",
+          "Spring",
+          "Mobile Application Programming",
+          "Online"
+        ],
+        [
+          "2024",
+          "Spring",
+          "Web Design with HTML and CSS",
+          "In-person"
+        ],
+        [
+          "2023",
+          "Fall",
+          "Linux/Unix",
+          "Online"
+        ],
+        [
+          "2023",
+          "Fall",
+          "Scripting (Python)",
+          "In-person"
+        ],
+        [
+          "2023",
+          "Fall",
+          "Introduction to Computer Science",
+          "In-person"
+        ],
+        [
+          "2023",
+          "Fall",
+          "Web Development with Scripting",
+          "Hybrid"
+        ],
+        [
+          "2023",
+          "Fall",
+          "Object Oriented Programming(Java)",
+          "Hybrid"
+        ],
+        [
+          "2023",
+          "Fall",
+          "Database Management",
+          "Hybrid"
+        ],
+        [
+          "2023",
+          "Fall",
+          "HTML",
+          "Hybrid"
+        ],
+        [
+          "2023",
+          "Spring",
+          "Capstone Projects in Software Development",
+          "Hybrid"
+        ],
+        [
+          "2023",
+          "Spring",
+          "Data Structures",
+          "In-person"
+        ],
+        [
+          "2023",
+          "Spring",
+          "Systems Analysis",
+          "In-person"
+        ],
+        [
+          "2023",
+          "Spring",
+          "Mobile Application Programming",
+          "Online"
+        ],
+        [
+          "2023",
+          "Spring",
+          "Linux/Unix",
+          "In-person"
+        ],
+        [
+          "2022",
+          "Fall",
+          "Scripting (Python)",
+          "In-person"
+        ],
+        [
+          "2022",
+          "Fall",
+          "Introduction to Computer Science",
+          "In-person"
+        ],
+        [
+          "2022",
+          "Fall",
+          "Object Oriented Programming(Java)",
+          "In-person"
+        ],
+        [
+          "2022",
+          "Fall",
+          "Linux/Unix",
+          "In-person"
+        ],
+        [
+          "2022",
+          "Fall",
+          "HTML",
+          "In-person"
+        ],
+        [
+          "2022",
+          "Spring",
+          "Data Structures",
+          "In-person"
+        ],
+        [
+          "2022",
+          "Spring",
+          "Systems Analysis",
+          "Online"
+        ],
+        [
+          "2022",
+          "Spring",
+          "Visual Basic",
+          "In-person"
+        ],
+        [
+          "2022",
+          "Spring",
+          "HTML",
+          "In-person"
+        ],
+        [
+          "2021",
+          "Fall",
+          "Logic and Problem Solving with C++",
+          "In-person"
+        ],
+        [
+          "2021",
+          "Fall",
+          "Introduction to Computer Science",
+          "In-person"
+        ],
+        [
+          "2021",
+          "Fall",
+          "Object Oriented Programming(C++)",
+          "In-person"
+        ],
+        [
+          "2021",
+          "Fall",
+          "Networking Essentials",
+          "In-person"
+        ],
+        [
+          "2021",
+          "Fall",
+          "Database Management",
+          "Online"
+        ],
+        [
+          "2020",
+          "Spring",
+          "Linux",
+          "Online"
+        ],
+        [
+          "2019",
+          "Fall",
+          "HTML",
+          "Online"
+        ],
+        [
+          "2019",
+          "Fall",
+          "Computer Literacy",
+          "Online"
+        ],
+        [
+          "2019",
+          "Spring",
+          "Visual Basic",
+          "In-person"
+        ],
+        [
+          "2018",
+          "Fall",
+          "C++ Programming",
+          "In-person"
+        ],
+        [
+          "2018",
+          "Fall",
+          "HTML",
+          "In-person"
+        ],
+        [
+          "2017",
+          "Fall",
+          "C++ Programming",
+          "In-person"
+        ],
+        [
+          "2017",
+          "Fall",
+          "HTML",
+          "In-person"
+        ]
+      ],
+      "description": "This table highlights my teaching experience across a range of computer science and information systems courses delivered in in-person, online, and hybrid formats. Teaching across modalities has allowed me to design flexible, inclusive learning environments while maintaining consistent learning outcomes and academic standards."
+    },
+    {
+      "id": "lab-sections",
+      "title": "Laboratory Supervisor/Instructor",
+      "description": "Supervised labs for Computer Science 1 (C++) and Programming for Engineers, supporting students in programming fundamentals, debugging, and MATLAB-based robotics applications through hands-on instruction.",
+      "columns": [
+        "Year",
+        "Semester",
+        "Course Name"
+      ],
+      "rows": [
+        [
+          "2020",
+          "Spring",
+          "Programming for Engineers lab"
+        ],
+        [
+          "2020",
+          "Spring",
+          "Computer Science 1 Lab"
+        ],
+        [
+          "2019",
+          "Spring",
+          "Computer Science 1 Lab"
+        ],
+        [
+          "2019",
+          "Spring",
+          "Programming for Engineers lab"
+        ],
+        [
+          "2018",
+          "Spring",
+          "Computer Science 1 Lab"
+        ],
+        [
+          "2018",
+          "Spring",
+          "Programming for Engineers lab"
+        ]
+      ]
+    }
+  ]
+}

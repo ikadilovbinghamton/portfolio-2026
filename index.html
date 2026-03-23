@@ -1,0 +1,771 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Node Trail Drag</title>
+    <link rel="stylesheet" href="styles.css?v=20260323-12" />
+  </head>
+  <body>
+    <aside class="toc-sidebar" aria-label="Page table of contents">
+      <div class="toc-panel">
+        <p class="toc-title">On This Page</p>
+        <nav id="toc-nav" class="toc-nav" aria-label="Section navigation"></nav>
+      </div>
+    </aside>
+
+    <main class="stage">
+      <canvas id="trail" aria-label="Connected nodes canvas"></canvas>
+     
+    <div class="hero-content">
+      <img
+        class="hero-avatar"
+        src="headshot.jpg"
+        alt="Portrait of Kenny Kadilov"
+        width="92"
+        height="92"
+        loading="eager"
+      />
+
+      <h1 class="hero-name">KENNY KADILOV</h1>
+
+      <p class="hero-subtitle">Assistant Professor of Computer Science and Information Systems</p>
+
+      <p class="hero-education">
+        Ph.D. Systems Science (ABD), Binghamton University · M.S. Computer Science, Georgia Tech
+      </p>
+  </div>
+
+  <section class="value-section">
+  <fieldset class="value-fieldset">
+    <legend class="value-legend">Research & Focus</legend>
+
+    <p class="value-text">
+     Community college professor and researcher with extensive experience in teaching and research in Computer Science, 
+     Systems Science, and Data Science. Research interests include complex systems, artificial intelligence, 
+     systems-based modeling, and data analysis. Research focus includes institutional 
+     scale and staffing efficiency, enrollment and retention dynamics, regional influences on higher-education systems, 
+     and data-driven approaches to improving student success in community colleges.
+    </p>
+  </fieldset>
+
+    <fieldset class="value-fieldset">
+    <legend class="value-legend">Promotion Narrative</legend>
+
+    <p class="value-text">
+      I am seeking promotion to Associate Professor based on my record of teaching effectiveness, student advising, scholarship, and service to the college. Since joining SUNY Sullivan, 
+      I have taught across multiple areas of computer science and information systems, supported students through advising and capstone mentoring, contributed to curriculum development
+       and assessment, and continued my scholarly development through doctoral study and professional engagement. My portfolio documents these contributions in alignment with the college’s 
+       promotion criteria, with particular emphasis on effectiveness with students, continued specialization in my field, and constructive service to the institution.
+    </p>
+  </fieldset>
+</section>
+
+<section class="teaching-section">
+  <h2 class="section-header">Teaching & Student Success</h2>
+
+  <fieldset class="teaching-fieldset">
+    <legend class="teaching-legend">Teaching Philosophy</legend>
+
+    <p class="value-text">
+     My teaching emphasizes systems thinking, applied problem-solving, and project-based learning. 
+     I integrate technical skills with real-world concepts, helping students connect theory to practice in 
+     software development, data analytics, and systems analysis. My teaching goal is to help students understand 
+     how different parts of a system work together, solve real problems, and learn through hands-on projects. 
+    </p>
+  </fieldset>
+
+  <fieldset class="teaching-fieldset">
+    <legend class="teaching-legend">Systematic Teaching Approach</legend>
+
+    <div class="teaching-grid">
+      <div class="teaching-visual">
+        <img
+          class="teaching-image teaching-image--trigger"
+          src="teaching_system.png"
+          alt="Systematic teaching approach visualization"
+          loading="lazy"
+          data-modal-target="teaching-modal"
+          role="button"
+          tabindex="0"
+          aria-haspopup="dialog"
+          aria-controls="teaching-modal"
+        />
+      </div>
+
+      <p class="value-text">
+       My teaching emphasizes systems thinking, applied problem-solving, and project-based learning. 
+       I integrate technical skills with real-world concepts, helping students connect theory to practice in 
+       software development, data analytics, and systems analysis. My teaching goal is to help students understand 
+       how different parts of a system work together, solve real problems, and learn through hands-on projects. 
+      </p>
+    </div>
+  </fieldset>
+
+    <fieldset class="teaching-fieldset">
+    <legend class="teaching-legend">The Open Lab and Hands-On Approach</legend>
+
+    <p class="value-text">
+      The Open Lab provides a supportive environment where students can work on assignments and labs while asking questions. 
+      Immediate access to assistance enhances students' understanding and ability to work through challenges. 
+      This hands-on approach (similar to learning a musical instrument) allows students to actively apply what they've learned and practice their skills. 
+      While this method is more challenging and requires more preparation time from the instructor, it's ultimately more effective. 
+      Practical experience helps students develop their skills, leading to deeper understanding and better knowledge retention.
+    </p>
+  </fieldset>
+
+    <fieldset class="teaching-fieldset">
+    <legend class="teaching-legend">Project-Based Learning</legend>
+
+    <div class="teaching-copy">
+      <p class="value-text">
+        Project-based learning (PBL) is proven to stimulate student interest and intellectual curiosity by connecting learning to real-world issues, allowing student choice, and integrating multiple subjects. 
+        It inspires critical thinking through complex problem-solving, collaborative learning, reflection, feedback, and authentic assessment. By engaging students in meaningful projects, PBL fosters deeper understanding, 
+        creativity, and critical analysis, equipping them with essential skills for lifelong learning and real-world problem-solving.
+      </p>
+
+      <div class="pbl-detail-grid">
+        <div class="pbl-detail-copy">
+          <p class="value-text">
+            Receiving positive feedback from students about their experiences with project-based learning is incredibly rewarding. 
+            Many students express that they feel they have learned the most through these hands-on, practical projects. 
+            They appreciate the opportunity to engage with real-world problems, collaborate with peers, and take ownership of their learning. 
+          </p>
+
+          <p class="value-text">
+            Students often highlight how these projects make learning more relevant and enjoyable, helping them to understand and retain complex concepts better than traditional methods. 
+            The process of researching, problem-solving, and receiving feedback helps them develop critical thinking and creativity, making their educational experience both meaningful and memorable.
+          </p>
+        </div>
+
+        <div class="teaching-visual pbl-detail-visual">
+          <img
+            class="teaching-image teaching-image--trigger pbl-detail-image"
+            src="Elements of PBL.png"
+            alt="Elements of project-based learning visualization"
+            loading="lazy"
+            data-modal-target="pbl-modal"
+            role="button"
+            tabindex="0"
+            aria-haspopup="dialog"
+            aria-controls="pbl-modal"
+          />
+        </div>
+      </div>
+    </div>
+  </fieldset>
+
+    <fieldset class="teaching-fieldset">
+    <legend class="teaching-legend">Teaching Experience</legend>
+    <div class="experience-summary">
+      <article class="experience-card">
+        <div class="credential-head">
+          <h3 class="credential-school">SUNY Sullivan</h3>
+          <p class="credential-location">Loch Sheldrake, NY</p>
+        </div>
+        <p class="credential-degree">Assistant Professor, September 2021 - May 2026</p>
+        <p class="credential-focus">Computer Science and Information Technology</p>
+        <ul class="experience-list">
+          <li>Increased department enrollment by designing and launching three specialized technology degree programs and leading a department-wide curriculum redesign.</li>
+          <li>Actively contributed to grant committees, securing funding for micro-credential programs and technology upgrades.</li>
+          <li>Developed a project-based programming curriculum using real-world scenarios, resulting in a boost in practical skills assessment scores.</li>
+          <li>Mentored students weekly on software projects, improving engagement and contributing to an increase in retention rate.</li>
+          <li>Earned OSCQR Certification, demonstrating proficiency in online course design aligned with SUNY’s Quality Review rubric and best practices.</li>
+          <li>Received the SUNY Online Teaching Ambassador Award for exemplary online instruction and contributions to advancing digital learning across the SUNY system.</li>
+        </ul>
+      </article>
+
+      <article class="experience-card">
+        <div class="credential-head">
+          <h3 class="credential-school">SUNY Orange</h3>
+          <p class="credential-location">Middletown, NY</p>
+        </div>
+        <p class="credential-degree">Adjunct Assistant Professor / Adjunct Instructor, September 2017 - December 2024</p>
+        <p class="credential-focus">Computer Science and Information Technology</p>
+        <ul class="experience-list">
+          <li>Worked closely with the Computer Science department to develop courses for the Web Programming degree, emphasizing the integration of emerging technologies to enhance curriculum relevance and student engagement.</li>
+          <li>Received exceptional student feedback scores and recognition for teaching strategies.</li>
+        </ul>
+      </article>
+    </div>
+
+      <div id="teaching-experience-tables" class="table-render-root" data-source="data/teaching-experience.json"></div>
+    </fieldset>
+
+    <fieldset class="teaching-fieldset">
+    <legend class="value-legend">Teaching Evidence & Assessment Results</legend>
+      <h4>Course Assessment Overview</h4>
+      <p class="value-text">
+        My course assessment approach measures student learning in a structured, evidence-based way while supporting continuous instructional improvement. 
+        Across computer science and information systems courses, I align assessments with course learning outcomes and broader program goals, using multiple 
+        measures rather than relying on a single exam or final grade. This approach lets me evaluate both conceptual understanding and applied technical 
+        performance across introductory, intermediate, and capstone-level coursework.
+      </p>
+
+      <article class="curriculum-block curriculum-block--reverse">
+        <figure class="curriculum-figure">
+          <img
+            class="showcase-image"
+            src="Formative.png"
+            alt="Formative assessment overview diagram"
+            loading="lazy"
+            role="button"
+            tabindex="0"
+            data-preview-image
+          />
+        </figure>
+
+        <div class="curriculum-copy">
+          <p class="value-text">
+            Assessment evidence includes quizzes, exams, programming assignments, labs, projects, class activities,and presentations. In introductory courses, assessment focuses on foundational skills such as problem solving, logic, debugging, and 
+            readiness for more advanced coursework. In intermediate and advanced courses, assessment emphasizes application, system design, technical integration, 
+            and independent problem solving. In capstone courses, assessment extends to project scoping, implementation, testing, documentation, and professional 
+            communication.
+          </p>
+          <p class="value-text">
+            Formative assessment is an important part of my teaching approach because it allows me to monitor student understanding throughout the learning process rather than 
+            waiting until the end of a unit or course. In computer science and information systems courses, I use formative assessments such as low-stakes quizzes, in-class coding exercises, 
+            lab checkpoints, draft submissions, discussion prompts, troubleshooting activities, and project progress reviews. These activities help identify misconceptions early, give students timely feedback, 
+            and create opportunities to adjust instruction before gaps become larger.
+          </p>
+        </div>
+      </article>
+
+      <h4>Student Success Data</h4>
+      <div id="student-success-dashboard" class="student-success-dashboard-root"></div>
+      <!-- <p id="student-success-dashboard-source" class="student-success-dashboard-source"></p> -->
+      <h4>Student Evaluation Summaries</h4>
+      <div id="survey-evaluation-dashboard" class="survey-evaluation-dashboard-root"></div>
+      <!-- <p id="survey-evaluation-dashboard-source" class="student-success-dashboard-source"></p> -->
+      <h4>Classroom Observations</h4>
+      <div id="classroom-observations-dashboard" class="classroom-observations-dashboard-root"></div>
+
+  </fieldset>
+
+
+    <fieldset class="teaching-fieldset">
+    <legend class="teaching-legend">Student Advising</legend>
+
+    <div id="student-advising-tables" class="table-render-root" data-source="data/student-advising.json"></div>
+
+  </fieldset>
+</section>
+
+<section class="professional-section">
+  <h2 class="section-header">Service, Professional Activities</h2>
+  <fieldset class="teaching-fieldset committee-section">
+    <legend class="teaching-legend">Committee Work</legend>
+    <p class="value-text committee-intro">
+      Committee service has focused on hiring, curriculum support, assessment, and student-success initiatives that strengthen academic quality and institutional responsiveness.
+    </p>
+
+    <div class="committee-grid">
+      <article class="committee-card">
+        <p class="committee-meta">Fall 2022</p>
+        <h3 class="committee-title">Computer Graphics/Graphic Design Hiring Committee</h3>
+        <p class="committee-text">Participated in faculty hiring processes, including candidate evaluation, interviews, and selection of qualified applicants.</p>
+      </article>
+
+      <article class="committee-card">
+        <p class="committee-meta">Spring 2022</p>
+        <h3 class="committee-title">Coordinator of Network Services Hiring Committee</h3>
+        <p class="committee-text">Led coordination of the hiring process, supporting candidate review and evaluation for a technical staff position.</p>
+      </article>
+
+      <article class="committee-card">
+        <p class="committee-meta">Spring 2022, Spring 2023</p>
+        <h3 class="committee-title">Perkins Grant Committee</h3>
+        <p class="committee-text">Contributed to planning and allocation of Perkins funding to support program development, technology resources, and student success initiatives.</p>
+      </article>
+
+      <article class="committee-card">
+        <p class="committee-meta">Spring 2022, Summer 2022, Fall 2022</p>
+        <h3 class="committee-title">Guided Pathways Committee</h3>
+        <p class="committee-text">Collaborated on initiatives to improve student pathways, program alignment, and retention through structured academic planning.</p>
+      </article>
+
+      <article class="committee-card">
+        <p class="committee-meta">Spring 2023, Summer 2023, Fall 2023</p>
+        <h3 class="committee-title">Drone Design Core Committee</h3>
+        <p class="committee-text">Supported development of interdisciplinary curriculum and program initiatives related to drone technology and applied design.</p>
+      </article>
+
+      <article class="committee-card">
+        <p class="committee-meta">Spring 2024, Fall 2024, Spring 2025, Fall 2025</p>
+        <h3 class="committee-title">Assessment Committee</h3>
+        <p class="committee-text">Participated in program assessment activities, including evaluation of student learning outcomes and continuous improvement processes.</p>
+      </article>
+
+      <article class="committee-card">
+        <p class="committee-meta">Spring 2025, Fall 2025</p>
+        <h3 class="committee-title">Online Advisory Committee</h3>
+        <p class="committee-text">Provided guidance on online learning initiatives, including course quality, instructional design, and best practices for digital education.</p>
+      </article>
+    </div>
+  </fieldset>
+
+    <fieldset class="teaching-fieldset">
+    <legend class="teaching-legend">Curriculum Revisions and Assessment</legend>
+  
+
+
+
+    <article class="curriculum-block">
+      <div class="curriculum-copy">
+        <h3 class="curriculum-title">Improving coherence, sequencing, and student readiness</h3>
+        <p class="value-text">
+          Across multiple annual review cycles, my curriculum work has focused on improving student readiness, strengthening course and program coherence, expanding relevant pathways, and aligning offerings more closely with workforce and transfer needs. This work has included revising the A.A.S. in Computer Programming, redesigning the A.A.S. in Computer Support, contributing to new certificate pathways, and updating courses such as Scripting, HTML, Object-Oriented Programming, Project, Unix/Linux, Database Management, Data Structures, Mobile Application Development, and Introduction to Computer Science.
+        </p>
+        <br>
+        <p class="value-text">
+          Throughout these revisions, I simplified student learning outcomes where needed, updated course content, improved sequencing, and developed programs that are both more accessible to students and more sustainable for staff.
+        </p>
+      </div>
+
+      <figure class="showcase-figure curriculum-figure">
+        <img
+          class="showcase-image"
+          src="curriculum work1.png"
+          alt="Curriculum revision materials for program and course updates"
+          loading="lazy"
+          role="button"
+          tabindex="0"
+          data-preview-image
+        />
+        <figcaption class="showcase-caption">
+          Revision materials documenting course updates, program alignment, and pathway-focused curriculum planning.
+        </figcaption>
+      </figure>
+    </article>
+
+    <article class="curriculum-block curriculum-block--reverse">
+      <div class="curriculum-copy">
+        <h3 class="curriculum-title">Designing flexible structures that support mobility and persistence</h3>
+        <p class="value-text">
+          A major theme of this work has been using curriculum revision to address observed student challenges. Course assessments in introductory courses repeatedly highlighted low performance, weak preparation for programming coursework, and the need for better alignment across courses within the degree. In response, I helped revise degree structures to reduce unnecessary CPT requirements, improve coherence between courses, and reconsider where foundational courses should appear in the sequence.
+        </p>
+        <br>
+        <p class="value-text">
+          In the most recent phase of this work, the revisions became more systems-oriented. The revised A.A.S. Computer Programming and A.A.S. Computer Support programs were intentionally structured so that the first year is shared and roughly half of the coursework overlaps, making it easier for students to switch between programs or complete both. The revisions also considered staffing realities by designing programs that could be delivered more effectively with limited faculty availability.
+        </p>
+      </div>
+
+      <figure class="showcase-figure curriculum-figure">
+        <img
+          class="showcase-image"
+          src="curriculum work2.png"
+          alt="Program structure planning materials for revised computing pathways"
+          loading="lazy"
+          role="button"
+          tabindex="0"
+          data-preview-image
+        />
+        <figcaption class="showcase-caption">
+          Program planning materials showing shared first-year structure, revised sequencing, and more flexible student pathways.
+        </figcaption>
+      </figure>
+    </article>
+
+    <article class="curriculum-block">
+      <div class="curriculum-copy">
+        <h3 class="curriculum-title">Moving from reflective practice to structured evidence-based improvement</h3>
+        <p class="value-text">
+          My assessment work has evolved from reflective teaching practice into a more explicit, outcomes-based model. Early efforts emphasized creating context for learning, using project-based evaluation in skill-based courses, using assignments and tests in knowledge-based courses, and providing formative feedback early and often.
+        </p>
+        <p class="value-text">
+          As part of this assessment initiative, I aligned assignments with program goals and course outcomes, used multiple assessment methods such as quizzes, exams, programming assignments, class activities, and projects, and incorporated student feedback to refine instructional strategies. I also analyzed grade distributions and course-level performance patterns to identify gateway-course challenges and support more evidence-based instructional decision-making.
+        </p>
+        <br>
+        <p class="value-text">
+          Most recently, I contributed to committee-level assessment leadership by advancing a bottom-up assessment approach that uses student self-evaluation and student learning outcome quizzes mapped to course SLOs and the degree map, with the long-term goal of automating the process through Brightspace.
+        </p>
+      </div>
+
+      <figure class="showcase-figure curriculum-figure">
+        <img
+          class="showcase-image"
+          src="BrightspaceProcess.png"
+          alt="Brightspace-based assessment process diagram"
+          loading="lazy"
+          role="button"
+          tabindex="0"
+          data-preview-image
+        />
+        <figcaption class="showcase-caption">
+          Brightspace-oriented assessment workflow connecting student self-evaluation, SLO-aligned quizzes, and degree-map reporting.
+        </figcaption>
+      </figure>
+    </article>
+
+  </fieldset>
+
+    <fieldset class="teaching-fieldset">
+    <legend class="teaching-legend">Professional Achievements</legend>
+    <p class="value-text achievement-intro">
+      Selected recognitions and professional development highlights in online teaching, course quality,
+      and instructional innovation across the SUNY system.
+    </p>
+
+    <div class="achievement-gallery">
+      <article class="achievement-card">
+        <img
+          class="achievement-image"
+          src="Ambassador Award.jpg"
+          alt="SUNY Online Ambassador Award certificate"
+          loading="lazy"
+        />
+        <div class="achievement-copy">
+          <h3 class="achievement-title">SUNY Online Ambassador Award</h3>
+          <p class="achievement-text">
+            Recognition for exemplary online instruction and contributions to advancing digital learning across SUNY.
+          </p>
+        </div>
+      </article>
+
+      <article class="achievement-card">
+        <img
+          class="achievement-image"
+          src="Online Summit.png"
+          alt="SUNY Online Summit recognition"
+          loading="lazy"
+        />
+        <div class="achievement-copy">
+          <h3 class="achievement-title">SUNY Online Summit</h3>
+          <p class="achievement-text">
+            Professional engagement with SUNY Online initiatives focused on innovation, quality, and effective digital teaching practice.
+          </p>
+        </div>
+      </article>
+
+      <article class="achievement-card">
+        <img
+          class="achievement-image"
+          src="OSCQR Certification .png"
+          alt="OSCQR certification and distance learning training certificate"
+          loading="lazy"
+        />
+        <div class="achievement-copy">
+          <h3 class="achievement-title">OSCQR Certification and Distance Learning Training</h3>
+          <p class="achievement-text">
+            Training and certification aligned with SUNY’s online course quality standards and best practices for distance learning design.
+          </p>
+        </div>
+      </article>
+    </div>
+
+   
+  </fieldset>
+</section>
+
+
+
+<section class="professional-section">
+  <h2 class="section-header">Scholarship</h2>
+
+   <fieldset class="teaching-fieldset">
+    <legend class="teaching-legend">Education</legend>
+    <div class="credential-list">
+      <article class="credential-card">
+        <div class="credential-head">
+          <h3 class="credential-school">Binghamton University</h3>
+          <p class="credential-location">Binghamton, NY</p>
+        </div>
+        <p class="credential-degree">Ph.D. Systems Science, ABD as of May 2025</p>
+        <p class="credential-focus">Industrial & Healthcare Systems Engineering</p>
+        <p class="credential-detail">
+          <strong>Relevant Courses:</strong> Advanced Topics in Network Science, Neural Networks,
+          Collective Dynamics of Complex Systems, Industrial Systems Engineering in Healthcare,
+          Healthcare Data Science & Analytics, Applied Probability & Statistics.
+        </p>
+      </article>
+
+      <article class="credential-card">
+        <div class="credential-head">
+          <h3 class="credential-school">Georgia Institute of Technology</h3>
+          <p class="credential-location">Atlanta, GA</p>
+        </div>
+        <p class="credential-degree">M.S. Computer Science, December 2020</p>
+        <p class="credential-focus">Specialization in Artificial Intelligence</p>
+        <p class="credential-detail">
+          <strong>Relevant Courses:</strong> Software Development Process, Software Architecture & Design,
+          Human-Computer Interaction, Health Informatics, Artificial Intelligence, Knowledge-Based AI,
+          Machine Learning.
+        </p>
+      </article>
+
+      <article class="credential-card">
+        <div class="credential-head">
+          <h3 class="credential-school">SUNY New Paltz</h3>
+          <p class="credential-location">New Paltz, NY</p>
+        </div>
+        <p class="credential-degree">B.S. Computer Science, December 2016</p>
+        <p class="credential-detail">
+          <strong>Relevant Courses:</strong> Computer Science, Data Structures, Object-Oriented Programming,
+          Discrete & Continuous Computer Algorithms.
+        </p>
+      </article>
+    </div>
+  </fieldset>
+
+ <fieldset class="teaching-fieldset dissertation-section">
+    <legend class="teaching-legend"> Doctoral Dissertation Progress / Publications</legend>
+    <p class="value-text dissertation-intro">
+      This dissertation portfolio reflects an emerging research pipeline on higher education as a dynamic system shaped by time, geography, policy, and institutional adaptation.
+    </p>
+        <h3 class="dissertation-title">Temporal and spatial dynamics in higher education</h3>
+    <br>
+    <div class="dissertation-grid">
+      <article class="dissertation-card dissertation-card--lead">
+        <p class="dissertation-kicker">Research Focus</p>
+        <p class="value-text">
+          I am pursuing a Ph.D. in Systems Science at Binghamton University, where my doctoral research focuses on a multivariate analysis of temporal and spatial dynamics in higher education. This work examines how temporal change and geographic variation shape institutional performance, student retention, enrollment patterns, and operational efficiency.
+        </p>
+      </article>
+
+      <article class="dissertation-card">
+        <p class="dissertation-kicker">Training and Milestones</p>
+        <p class="value-text">
+          My doctoral training includes advanced study in systems science, probability and statistics, collective dynamics of complex systems, healthcare systems, healthcare data science and analytics, neural networks, and network science. The learning contract also outlines formal milestones including the comprehensive examination, prospectus colloquium, dissertation preparation, and final oral defense.
+        </p>
+      </article>
+
+      <article class="dissertation-card">
+        <p class="dissertation-kicker">Systems Science Framing</p>
+        <p class="value-text">
+          A central theme of my dissertation is the application of systems science to higher education as a complex adaptive system. My recent doctoral work includes conceptual and methodological writing on multivariate methods in education, temporal and spatial modeling, and animated geographic visualization of SUNY community colleges from 2015 to 2024.
+        </p>
+        <figure class="dissertation-figure">
+          <img
+            class="dissertation-image"
+            src="Picture1.gif?v=20260321-1"
+            alt="Animated systems science visualization related to higher education dynamics"
+          />
+        </figure>
+      </article>
+
+      <article class="dissertation-card">
+        <p class="dissertation-kicker">Publication Pipeline</p>
+        <p class="value-text">
+          The dissertation research is organized into a developing publication agenda centered on SUNY community colleges, including work on human capital efficiency and innovation scaling, the influence of economic conditions on retention stability in online versus seated courses, and spatial analysis of enrollment patterns and geographic proximity.
+        </p>
+      </article>
+    </div>
+
+
+</fieldset>
+
+
+   
+
+   <fieldset class="teaching-fieldset">
+    <legend class="teaching-legend">Technical Expertise</legend>
+    <div class="expertise-grid">
+      <section class="expertise-card">
+        <h3 class="expertise-title">Software Engineering</h3>
+        <ul class="expertise-list">
+          <li>Proficient in Java, Python, and C++, with advanced coding skills and a strong object-oriented programming foundation.</li>
+          <li>Experienced with Git, Docker, and Jenkins for version control, containerization, and CI/CD workflows.</li>
+          <li>Experienced in designing and integrating RESTful APIs and backend services to support scalable and maintainable applications.</li>
+          <li>Familiar with test-driven development and Agile software development practices.</li>
+        </ul>
+      </section>
+
+      <section class="expertise-card">
+        <h3 class="expertise-title">Web Design and Development</h3>
+        <ul class="expertise-list">
+          <li>Proficient in HTML5, CSS3, and JavaScript for responsive and interactive web interfaces.</li>
+          <li>Experienced with Affinity Photo, Balsamiq, and Figma for high-fidelity prototypes and interface planning.</li>
+          <li>Applies HCI principles and UX/UI best practices to improve usability and user-centered design.</li>
+          <li>Worked with Angular, React, jQuery, D3.js, AJAX, and JSON for modern front-end applications.</li>
+          <li>Experienced in backend development with object-oriented PHP and Django, plus MySQL and phpMyAdmin.</li>
+        </ul>
+      </section>
+
+      <section class="expertise-card">
+        <h3 class="expertise-title">Data Visualization and Analytics</h3>
+        <ul class="expertise-list">
+          <li>Proficient in Python and R for analytics and visualization using pandas, NumPy, matplotlib, Plotly, ggplot2, and dplyr.</li>
+          <li>Experienced in predictive modeling with decision trees, linear models, and k-means clustering.</li>
+          <li>Familiar with TensorFlow for machine learning and Hadoop for big data environments.</li>
+        </ul>
+      </section>
+
+      <section class="expertise-card">
+        <h3 class="expertise-title">Systems Engineering/Project Management</h3>
+        <ul class="expertise-list">
+          <li>Skilled in process mapping, optimization, scheduling, and lean system implementation.</li>
+          <li>Experienced with continuous improvement methods and simulation-based system analysis.</li>
+          <li>Experienced in planning, executing, and monitoring projects with attention to deadlines and budget constraints.</li>
+        </ul>
+      </section>
+
+         <section class="expertise-card">
+        <h3 class="expertise-title">Databases</h3>
+        <ul class="expertise-list">
+          <li>Proficient in complex SQL for analysis, reporting, and data manipulation across MySQL, PostgreSQL, and SQLite.</li>
+          <li>Experienced in schema design, query optimization, stored procedures, and triggers.</li>
+        </ul>
+      </section>
+
+      <section class="expertise-card">
+        <h3 class="expertise-title">Simulation and Modeling</h3>
+        <ul class="expertise-list">
+          <li>Developed agent-based, complex network, and spatial models to analyze and predict system behavior.</li>
+          <li>Uses modeling tools to evaluate performance and identify implementation risks early.</li>
+        </ul>
+      </section>
+    </div>
+  </fieldset>
+
+
+    <fieldset class="teaching-fieldset">
+    <legend class="teaching-legend">Discipline-Specific Professional Development</legend>
+    <p class="development-heading">Technical Skill Development</p>
+      <div class="expertise-grid">
+      <section class="expertise-card">
+        <h3 class="expertise-title">AI/ML</h3>
+        <ul class="expertise-list">
+            <li>Developed knowledge of core machine learning concepts, including supervised and unsupervised learning.</li>
+            <li>Strengthened understanding of neural networks, pattern recognition, and predictive modeling.</li>
+            <li>Continued building technical fluency in emerging AI applications relevant to teaching and research.</li>
+        </ul>
+      </section>
+
+      <section class="expertise-card">
+        <h3 class="expertise-title">Data Science</h3>
+        <ul class="expertise-list">
+          <li>Developed skills in data cleaning, transformation, and preparation for analysis.</li>
+          <li>Used Python and related analytical tools for visualization, statistical analysis, and modeling.</li>
+          <li>Applied data science methods to forecasting, student success analysis, and evidence-based decision making.</li>
+        </ul>
+      </section>
+
+      <section class="expertise-card">
+        <h3 class="expertise-title">Systems Science</h3>
+        <ul class="expertise-list">
+          <li>Developed skills in analyzing feedback loops, interdependence, temporal change, and system behavior.</li>
+          <li>Applied systems science concepts to higher education research and organizational problem solving.</li>
+          <li>Integrated multivariate and dynamic perspectives into the study of institutional performance.</li>
+        </ul>
+      </section>
+
+      <section class="expertise-card">
+        <h3 class="expertise-title">Institutional Research</h3>
+        <ul class="expertise-list">
+            <li>Built skills in assessment analysis, academic program review, and student outcomes evaluation.</li>
+            <li>Worked with institutional and public higher education datasets for research and planning purposes.</li>
+        </ul>
+      </section>
+      </div>
+
+    <div class="expertise-grid expertise-grid--wide">
+      <section class="expertise-card expertise-card--wide">
+        <h3 class="expertise-title">Pedagogical Development in CS Education</h3>
+        <ul class="expertise-list">
+          <li>Ongoing development of project-based learning (PBL) strategies to support hands-on, real-world problem solving in computer science courses (e.g., multi-week capstone projects where students design and build full-stack applications such as productivity tools, games, and data-driven systems).</li>
+          <li>Design and refinement of curriculum and assessments for introductory and intermediate programming courses (e.g., structured progression of assignments from basic control structures to object-oriented design, with aligned rubrics and learning outcomes).</li>
+          <li>Integration of systems thinking into computing education to help students understand relationships, dependencies, and system behavior (e.g., using diagrams and holistic debugging exercises to analyze how components interact within software systems).</li>
+          <li>Development of active learning techniques, including in-class problem-solving, discussion checkpoints, and collaborative exercises (e.g., pausing lectures for guided coding problems and peer discussion on debugging strategies and design decisions).</li>
+          <li>Implementation of structured lab environments (e.g., open lab model) to support experiential learning and immediate feedback.</li>
+          <li>Continuous improvement of assessment strategies aligned with learning outcomes and student success metrics (CLOs/DLOs), including analyzing course-level data and adjusting assignments accordingly.</li>
+        </ul>
+      </section>
+
+      <section class="expertise-card expertise-card--wide">
+        <h3 class="expertise-title">Research & Writing Development</h3>
+        <ul class="expertise-list">
+          <li>Active development of scholarly writing skills through participation in research-writing seminars and workshops focused on academic publication.</li>
+          <li>Ongoing preparation of research manuscripts in higher education systems, including institutional efficiency, enrollment dynamics, and student success outcomes.</li>
+          <li>Application of quantitative research methods, including statistical modeling, simulation, and data-driven analysis using large-scale datasets such as IPEDS.</li>
+          <li>Development of research frameworks grounded in systems science, including spatiotemporal analysis, complex systems modeling, and efficiency analysis.</li>
+          <li>Experience structuring academic manuscripts using standard formats such as IMRaD, with emphasis on clarity, argumentation, and evidence-based writing.</li>
+          <li>Engagement with academic literature in computer science education, systems science, and higher education research to inform study design and methodology.</li>
+          <li>Preparation of research outputs for peer-reviewed journals and academic dissemination.</li>
+        </ul>
+      </section>
+    </div>
+  </fieldset>
+
+    <fieldset class="teaching-fieldset">
+    <legend class="teaching-legend">Consulting</legend>
+     
+          <article class="dissertation-card">
+        <p class="dissertation-kicker">Education</p>
+        <p class="value-text">
+   Provided consulting in computer science education for a large courseware company, 
+        focusing on curriculum design and assessment development for Computer Science 1 and Computer Science 2, 
+        aligning content with learning outcomes and student success metrics.
+            </p>
+      </article>
+      <br>
+
+         <article class="dissertation-card">
+        <p class="dissertation-kicker">Healthcare</p>
+        <p class="value-text">
+ Provided consulting for a healthcare software company on integrating AI and large language models (LLMs) 
+      to support automated capture of therapy notes. Contributed to system design, workflow integration, and 
+      evaluation of AI-driven solutions, emphasizing accuracy, usability, and alignment with clinical documentation needs.
+             </p>
+      </article>
+  </fieldset>
+
+
+</section>
+
+
+<div
+  class="modal"
+  id="teaching-modal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="teaching-modal-title"
+  aria-hidden="true"
+>
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card" role="document">
+    <button class="modal-close" type="button" data-close aria-label="Close">
+      &times;
+    </button>
+    <img
+      class="modal-image"
+      src="teaching_system.png"
+      alt="Systematic teaching approach visualization"
+      loading="lazy"
+      id="teaching-modal-title"
+    />
+  </div>
+</div>
+
+<div
+  class="modal"
+  id="pbl-modal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="pbl-modal-title"
+  aria-hidden="true"
+>
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card pbl-modal__card" role="document">
+    <button class="modal-close" type="button" data-close aria-label="Close">
+      &times;
+    </button>
+    <img
+      class="modal-image pbl-modal__image"
+      src="Elements of PBL.png"
+      alt="Elements of project-based learning visualization"
+      loading="lazy"
+      id="pbl-modal-title"
+    />
+  </div>
+</div>
+
+
+    </main>
+    <script src="table-data.js"></script>
+    <script src="student-success-data.js"></script>
+    <script src="survey-evaluation-data.js?v=20260323-1"></script>
+    <script src="observation-evidence-data.js?v=20260323-1"></script>
+    <script src="vendor/d3.v7.min.js"></script>
+    <script src="script.js?v=20260323-5"></script>
+  </body>
+</html>
