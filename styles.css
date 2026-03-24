@@ -905,6 +905,7 @@ body {
   font-weight: 600;
   line-height: 1.45;
   color: #1f293b;
+  font-size: 11px;
 }
 
 .survey-evaluation-normalized__legend-value,
