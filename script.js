@@ -1121,18 +1121,54 @@ const SURVEY_RESPONSE_COLORS = {
   "Too Hard": "#b45a54",
 };
 
+function normalizeSurveyResponseLabel(label, responsePairs = []) {
+  const performanceConfidenceLabels = new Set([
+    "Very confident",
+    "Somewhat confident",
+    "Neither confident nor unconfident",
+    "Somewhat unconfident",
+    "Very unconfident",
+  ]);
+
+  const isPerformanceConfidenceFamily = responsePairs.some(([entryLabel]) =>
+    performanceConfidenceLabels.has(entryLabel),
+  );
+
+  if (isPerformanceConfidenceFamily && label === "Neither Agree nor Disagree") {
+    return "Neither confident nor unconfident";
+  }
+
+  return label;
+}
+
 function getSurveyResponseEntries(responsePairs = []) {
-  const total = responsePairs.reduce((sum, [, count]) => sum + count, 0);
-  return responsePairs.map(([label, count]) => ({
+  const mergedResponses = new Map();
+
+  responsePairs.forEach(([label, count]) => {
+    const normalizedLabel = normalizeSurveyResponseLabel(label, responsePairs);
+    mergedResponses.set(normalizedLabel, (mergedResponses.get(normalizedLabel) || 0) + count);
+  });
+
+  const mergedPairs = Array.from(mergedResponses.entries());
+  const total = mergedPairs.reduce((sum, [, count]) => sum + count, 0);
+  return mergedPairs.map(([label, count]) => ({
     label,
     count,
     share: total > 0 ? count / total : 0,
   }));
 }
 
+function getSurveyNormalizedBucketValue(normalized, bucket) {
+  if (!normalized) return 0;
+  if (bucket === "neutral") {
+    return normalized.neutral || normalized["Neither Agree nor Disagree"] || 0;
+  }
+  return normalized[bucket] || 0;
+}
+
 function getSurveyNormalizedRate(normalized, bucket = "positive") {
   if (!normalized || !normalized.total) return 0;
-  return (normalized[bucket] || 0) / normalized.total;
+  return getSurveyNormalizedBucketValue(normalized, bucket) / normalized.total;
 }
 
 function getSurveyResponseColor(label, highlightLabel) {
@@ -1160,10 +1196,12 @@ function createSurveyNormalizedSummary(normalized, options = {}) {
   rail.className = "survey-evaluation-normalized__rail";
 
   ["positive", "neutral", "negative"].forEach((bucket) => {
-    if (!(bucket in normalized)) return;
+    const bucketValue = getSurveyNormalizedBucketValue(normalized, bucket);
+    if (!bucketValue && bucket !== "negative" && bucket !== "positive") return;
+    if (!bucketValue && !(bucket in normalized) && !(bucket === "neutral" && "Neither Agree nor Disagree" in normalized)) return;
     const segment = document.createElement("span");
     segment.className = `survey-evaluation-normalized__segment is-${bucket}`;
-    segment.style.width = normalized.total > 0 ? `${(normalized[bucket] / normalized.total) * 100}%` : "0%";
+    segment.style.width = normalized.total > 0 ? `${(bucketValue / normalized.total) * 100}%` : "0%";
     rail.appendChild(segment);
   });
 
@@ -1173,7 +1211,8 @@ function createSurveyNormalizedSummary(normalized, options = {}) {
   legend.className = "survey-evaluation-normalized__legend";
 
   ["positive", "neutral", "negative"].forEach((bucket) => {
-    if (!(bucket in normalized)) return;
+    const bucketValue = getSurveyNormalizedBucketValue(normalized, bucket);
+    if (!bucketValue && !(bucket in normalized) && !(bucket === "neutral" && "Neither Agree nor Disagree" in normalized)) return;
     const item = document.createElement("div");
     item.className = "survey-evaluation-normalized__legend-item";
     item.innerHTML = `
@@ -1181,7 +1220,7 @@ function createSurveyNormalizedSummary(normalized, options = {}) {
       <span class="survey-evaluation-normalized__legend-label">${
         options.labelMap?.[bucket] || bucket
       }</span>
-      <span class="survey-evaluation-normalized__legend-value">${normalized[bucket]} · ${formatPercent(
+      <span class="survey-evaluation-normalized__legend-value">${bucketValue} · ${formatPercent(
         getSurveyNormalizedRate(normalized, bucket),
         1,
       )}</span>
