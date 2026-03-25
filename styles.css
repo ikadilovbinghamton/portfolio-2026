@@ -1401,10 +1401,36 @@ body {
 
 .insight-modal__card--observation-detail {
   width: min(980px, 95vw);
+  height: min(80vh, 820px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .insight-modal__card--observation-criterion {
   width: min(980px, 95vw);
+}
+
+.insight-modal__card--observation-detail .insight-modal__content {
+  flex: 1;
+  overflow-y: auto;
+  padding-top: 18px;
+  padding-right: 8px;
+}
+
+.insight-modal__card--observation-detail .insight-modal__content::-webkit-scrollbar {
+  width: 10px;
+}
+
+.insight-modal__card--observation-detail .insight-modal__content::-webkit-scrollbar-thumb {
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 999px;
+  background: rgba(108, 123, 151, 0.48);
+}
+
+.insight-modal__card--observation-detail .insight-modal__content::-webkit-scrollbar-track {
+  border-radius: 999px;
+  background: rgba(129, 136, 154, 0.12);
 }
 
 .survey-evaluation-course-modal {
@@ -2284,6 +2310,10 @@ body.modal-open {
     grid-template-columns: 1fr;
   }
 
+  .insight-modal__card--observation-detail {
+    height: min(84vh, 760px);
+  }
+
   .observation-criteria-row__value {
     justify-self: start;
   }
@@ -2363,5 +2393,11 @@ html, body {
 
   .insight-chart__pie {
     width: min(72vw, 260px);
+  }
+
+  .insight-modal__card--observation-detail {
+    width: min(94vw, 94vw);
+    height: min(86vh, 680px);
+    padding: 18px;
   }
 }
